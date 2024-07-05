@@ -36,10 +36,15 @@ if y > room_height-60 {
 	y = room_height-60 
 }
 
+if type = FISH_TYPE.EVILFISH {
+	fish_ai = 8
+}
 
+
+if chase = 0 {
 x = x + (hsp*hdir);
 y = y + (vsp*vdir);
-
+}
 switch (fish_ai) {
 	case 0:
 	break;
@@ -47,12 +52,23 @@ switch (fish_ai) {
 	break;
 	case 2:
 	break;
-	case FISH_AI.CHASE:
+	case 8:
 		var xx = obj_player.x + obj_player.fishing_line_x2 + obj_player.xhook
 		var yy = obj_player.y + obj_player.fishing_line_y2 + 4
-		if distance_to_point(xx,yy) < 128 {
-			move_towards_point(xx,yy,4)
-			
+		var x1 = obj_player.fishing_line_x1;
+		var y1 = obj_player.fishing_line_y1;
+		var x2 = obj_player.fishing_line_x2;
+		var y2 = obj_player.fishing_line_y2;
+		if obj_player.fishing_state = FISH_ITEM.EMPTY {
+			if point_distance(x,y,xx,yy) < 64 {
+				move_towards_point(xx,yy,4)
+				sprite_angle = point_direction(x,y,xx,yy)
+				image_xscale = abs(image_xscale)
+				chase = 1;
+			} else {
+				chase = 0;
+				sprite_angle = 0;
+			}
 		}
 	break;
 	default:
@@ -64,11 +80,12 @@ if state = 0 {
 	var xx = obj_player.x + obj_player.fishing_line_x2 + obj_player.xhook
 	var yy = obj_player.y + obj_player.fishing_line_y2 + 4
 	
-	
-		
+	sprite_angle = point_direction(x,y,xx,yy-1)
+	image_xscale = abs(image_xscale)
+	hdir = 1;
 	x = xx
 	y = yy
-	hdir = 1
-	sprite_angle = 90
+	//hdir = 1
+	//sprite_angle = 90
 	
 }

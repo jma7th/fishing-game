@@ -14,7 +14,7 @@ vmove = 0;
 
 sprite_angle = 0;
 image_speed = 0.5
-
+chase = 0;
 
 hdir = 1;
 vdir = 1;
@@ -52,7 +52,7 @@ switch(type) {
 	case 8:
 		sprite_index = spr_evil_fish
 		value = FISH_ITEM.EVILFISH
-		fish_ai = FISH_AI.CHASE
+		fish_ai = 8
 	break;
 	default:
 	break;
@@ -87,7 +87,7 @@ method_fish_ai_choose = function() {
 			vdir = vmove
 			time_source_start(ts_fish_ai_3)
 		break;
-		case FISH_AI.CHASE:
+		case 8:
 			hmovespeed = random_range(0.1,1)
 		break;
 		default:

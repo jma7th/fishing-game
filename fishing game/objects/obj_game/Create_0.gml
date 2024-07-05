@@ -3,6 +3,10 @@
 randomize();
 score_buffer = 0;
 fish_limit = 16
+timer = 60;
+game_state = 0;
+hiscore = 0;
+ts_timer = time_source_create(time_source_game,1,time_source_units_seconds,function() {timer-=1},[],-1)
 
 enum FISH_AI {
 	NORMAL,
@@ -18,7 +22,7 @@ method_fish_spawn = function() {
 		var xx = -16+((room_width+32)*xd)
 		var yy = irandom_range(200,360)
 		var obj = instance_create_depth(xx,yy,obj_player.depth-1,obj_fish)
-		obj.fish_ai = choose(0,1,2,3,8)
+		obj.fish_ai = choose(0,1,2,3)
 		if xd = 0 {
 			with (obj) {
 				hmove = 1;
@@ -36,6 +40,4 @@ method_fish_spawn = function() {
 }
 ts_fish_period = 2;
 ts_fish_spawn = time_source_create(time_source_game,ts_fish_period,time_source_units_seconds,method_fish_spawn,[],-1)
-time_source_start(ts_fish_spawn)
 
-audio_play_sound(snd_bgm,0,1,0.8)
