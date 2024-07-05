@@ -22,6 +22,7 @@ fishing_line_min = 4
 fishing_line_max = 400;
 fishing_line = fishing_line_min;
 fishing_line_speed = 2;
+fishing_line_weight = 1;
 
 
 

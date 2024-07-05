@@ -72,12 +72,14 @@ method_fish_ai_choose = function() {
 			hmovespeed = random_range(0.1,1)
 			vmovespeed = random_range(0.4,1)
 			vmove = choose(-1,1)
+			vdir = vmove
 			time_source_start(ts_fish_ai_2)
 		break;
 		case 3:
 			hmovespeed = random_range(0.2,1.2)
 			vmovespeed = random_range(0.4,1)
 			vmove = choose(-1,1)
+			vdir = vmove
 			time_source_start(ts_fish_ai_3)
 		break;
 		default:
@@ -91,12 +93,22 @@ method_fish_ai_2 = function() {
 	vdir = vmove
 }
 method_fish_ai_3 = function() {
-	if hmove = 1 hmove = -1
-	if hmove = -1 hmove = 1;
+	time_source_start(ts_fish_ai_3_1)
+}
+method_fish_ai_3_1 = function() {
+	hmove = 0;
+	time_source_start(ts_fish_ai_3_2);
+}
+method_fish_ai_3_2 = function() {
+	if hdir = 1 hmove = -1
+	if hdir = -1 hmove = 1;
 	hdir = hmove
 }
+
 ts_fish_ai_2 = time_source_create(time_source_game,0.25,time_source_units_seconds,method_fish_ai_2,[],-1)
-ts_fish_ai_3 = time_source_create(time_source_game,0.5,time_source_units_seconds,method_fish_ai_3,[],-1)
+ts_fish_ai_3 = time_source_create(time_source_game,random_range(1,2),time_source_units_seconds,method_fish_ai_3,[],-1)
+ts_fish_ai_3_1 = time_source_create(time_source_game,random_range(1,2),time_source_units_seconds,method_fish_ai_3_1,[],-1)
+ts_fish_ai_3_2 = time_source_create(time_source_game,random_range(1,2),time_source_units_seconds,method_fish_ai_3_2,[],-1)
 ts_fish_ai_choose = time_source_create(time_source_game,5,time_source_units_frames,method_fish_ai_choose)
 
 time_source_start(ts_fish_ai_choose)

@@ -6,7 +6,7 @@ method_fish_spawn = function() {
 	if (instance_number(obj_fish) < fish_limit) {
 		var xd = choose(0,1)
 		var xx = -16+((room_width+32)*xd)
-		var yy = irandom_range(192,360)
+		var yy = irandom_range(200,360)
 		var obj = instance_create_depth(xx,yy,obj_player.depth-1,obj_fish)
 		obj.fish_ai = choose(0,1,2,3)
 		if xd = 0 {

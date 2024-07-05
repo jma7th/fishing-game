@@ -3,7 +3,7 @@
 
 if keyboard_check(vk_up) {
 	if fishing_line > fishing_line_min {
-		fishing_line -= fishing_line_speed
+		fishing_line -= fishing_line_speed/fishing_line_weight
 	}
 }
 
@@ -95,6 +95,7 @@ if (obj_col) {
 		obj_col.state = 0
 		audio_play_sound(snd_fish_catch,2,0,0.5)
 	} else {
+		fishing_line_weight = obj_col.size;
 		if fishing_line = fishing_line_min {
 			switch(fishing_state) {
 				case FISH_ITEM.FISH1:
@@ -106,6 +107,7 @@ if (obj_col) {
 			instance_destroy(obj_col);
 			fishing_state = FISH_ITEM.EMPTY
 			audio_play_sound(choose(snd_fish_reel_2,snd_fish_reel),2,0,0.5)
+			fishing_line_weight = 1;
 		}
 	}
 }

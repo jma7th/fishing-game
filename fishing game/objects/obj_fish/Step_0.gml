@@ -28,8 +28,8 @@ if (x > room_width+32) {
 	//x = room_width-60
 }
 
-if y < 30 {
-	y = 30
+if y < 240 {
+	y = 240
 }
 
 if y > room_height-60 {
