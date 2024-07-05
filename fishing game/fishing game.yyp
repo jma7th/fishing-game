@@ -44,6 +44,7 @@
     {"id":{"name":"snd_fish_reel_2","path":"sounds/snd_fish_reel_2/snd_fish_reel_2.yy",},},
     {"id":{"name":"snd_fish_reel","path":"sounds/snd_fish_reel/snd_fish_reel.yy",},},
     {"id":{"name":"spr_brackeys","path":"sprites/spr_brackeys/spr_brackeys.yy",},},
+    {"id":{"name":"spr_evil_fish","path":"sprites/spr_evil_fish/spr_evil_fish.yy",},},
     {"id":{"name":"spr_fish1","path":"sprites/spr_fish1/spr_fish1.yy",},},
     {"id":{"name":"spr_fish2","path":"sprites/spr_fish2/spr_fish2.yy",},},
     {"id":{"name":"spr_fish3","path":"sprites/spr_fish3/spr_fish3.yy",},},

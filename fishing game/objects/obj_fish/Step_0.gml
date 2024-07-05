@@ -47,6 +47,14 @@ switch (fish_ai) {
 	break;
 	case 2:
 	break;
+	case FISH_AI.CHASE:
+		var xx = obj_player.x + obj_player.fishing_line_x2 + obj_player.xhook
+		var yy = obj_player.y + obj_player.fishing_line_y2 + 4
+		if distance_to_point(xx,yy) < 128 {
+			move_towards_point(xx,yy,4)
+			
+		}
+	break;
 	default:
 	break;
 }

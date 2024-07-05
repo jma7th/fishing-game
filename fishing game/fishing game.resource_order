@@ -23,6 +23,7 @@
     {"name":"snd_fish_reel_2","order":3,"path":"sounds/snd_fish_reel_2/snd_fish_reel_2.yy",},
     {"name":"snd_fish_reel","order":2,"path":"sounds/snd_fish_reel/snd_fish_reel.yy",},
     {"name":"spr_brackeys","order":2,"path":"sprites/spr_brackeys/spr_brackeys.yy",},
+    {"name":"spr_evil_fish","order":13,"path":"sprites/spr_evil_fish/spr_evil_fish.yy",},
     {"name":"spr_fish1","order":5,"path":"sprites/spr_fish1/spr_fish1.yy",},
     {"name":"spr_fish2","order":6,"path":"sprites/spr_fish2/spr_fish2.yy",},
     {"name":"spr_fish3","order":7,"path":"sprites/spr_fish3/spr_fish3.yy",},

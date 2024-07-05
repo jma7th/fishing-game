@@ -3,7 +3,7 @@
 
 if keyboard_check(vk_up) {
 	if fishing_line > fishing_line_min {
-		fishing_line -= fishing_line_speed/fishing_line_weight
+		fishing_line -= fishing_line_speed - (fishing_line_weight/4)
 	}
 }
 
@@ -99,7 +99,10 @@ if (obj_col) {
 		if fishing_line = fishing_line_min {
 			switch(fishing_state) {
 				case FISH_ITEM.FISH1:
-					score+= 100*obj_col.size;
+					obj_game.score_buffer+= 100*obj_col.size;
+				break;
+				case FISH_ITEM.EVILFISH:
+					obj_game.score_buffer-= 100*obj_col.size;
 				break;
 				default:
 				break;
@@ -111,3 +114,4 @@ if (obj_col) {
 		}
 	}
 }
+

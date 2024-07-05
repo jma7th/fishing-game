@@ -14,7 +14,21 @@ enum FISH_ITEM {
 	FISH1,
 	FISH2,
 	FISH3,
+	EVILFISH,
 }
+
+enum FISH_TYPE {
+	FISH1,
+	FISH2,
+	FISH3,
+	FISH4,
+	FISH5,
+	FISH6,
+	FISH7,
+	FISH8,
+	EVILFISH
+}
+
 
 fishing_state = FISH_ITEM.EMPTY; // 0 = empty
 
@@ -45,3 +59,9 @@ xhook_speed = 0;
 xhook_speed_max = 1;
 xhook_speed_frame = 1;
 xhook_direction = 1;
+
+yhook = 0;
+yhook_speed = 0;
+yhook_speed_max = 1;
+yhook_speed_frame = 1;
+yhook_direction = 1;

@@ -1,14 +1,24 @@
 /// @description Inserir descrição aqui
 // Você pode escrever seu código neste editor
 randomize();
+score_buffer = 0;
 fish_limit = 16
+
+enum FISH_AI {
+	NORMAL,
+	DIAGONAL,
+	DIAGONAL2,
+	HORIZONTAL,
+	CHASE
+}
+
 method_fish_spawn = function() {
 	if (instance_number(obj_fish) < fish_limit) {
 		var xd = choose(0,1)
 		var xx = -16+((room_width+32)*xd)
 		var yy = irandom_range(200,360)
 		var obj = instance_create_depth(xx,yy,obj_player.depth-1,obj_fish)
-		obj.fish_ai = choose(0,1,2,3)
+		obj.fish_ai = choose(0,1,2,3,8)
 		if xd = 0 {
 			with (obj) {
 				hmove = 1;

@@ -19,7 +19,7 @@ image_speed = 0.5
 hdir = 1;
 vdir = 1;
 
-type = irandom(7);
+type = irandom(8);
 value = FISH_ITEM.FISH1
 fish_ai = 0;
 state = 1;
@@ -48,6 +48,11 @@ switch(type) {
 	break;
 	case 7:
 		sprite_index = spr_fish8
+	break;
+	case 8:
+		sprite_index = spr_evil_fish
+		value = FISH_ITEM.EVILFISH
+		fish_ai = FISH_AI.CHASE
 	break;
 	default:
 	break;
@@ -82,7 +87,11 @@ method_fish_ai_choose = function() {
 			vdir = vmove
 			time_source_start(ts_fish_ai_3)
 		break;
+		case FISH_AI.CHASE:
+			hmovespeed = random_range(0.1,1)
+		break;
 		default:
+			hmovespeed = random_range(0.1,1)
 		break;
 	}
 }
