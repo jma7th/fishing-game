@@ -1,6 +1,10 @@
 /// @description Inserir descrição aqui
 // Você pode escrever seu código neste editor
 randomize();
+
+
+
+sound_mute = 0;
 score_buffer = 0;
 fish_limit = 16
 timer = 60;
